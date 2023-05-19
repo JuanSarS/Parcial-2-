@@ -1,0 +1,49 @@
+<div *ngIf="selected">
+  <app-bandas-detail [bandaDetail]="selectedBanda" ></app-bandas-detail>
+</div>
+
+
+<div class="container" >
+  <div class="row" style="margin-top: 25px;">
+      <div class="col-sm-12">
+          <h1 style="background-color: aqua; " align="center" >Bandas</h1>
+      </div>
+  </div>
+  <div class="row" align="center">
+      <div class="col-sm-7">
+          <table class="table" id="series">
+              <thead>
+                  <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Country</th>
+                  <th scope="col">Gender</th>
+                  <th scope="col">Year</th>
+                  </tr>
+              </thead>
+              <div *ngFor="let banda of bandas" >
+                <tr (click)="onSelected(banda)">
+                  <td>{{banda.id}}</td>
+                  <td>{{banda.name}} </td>
+                  <td>{{banda.country}}</td>
+                  <td>{{banda.genre}}</td>
+                  <td>{{banda.foundation_year}}</td>
+                </tr>
+              </div>
+
+          </table>
+
+          <div id="Avg" align="left" style="background-color:azure ; padding:10px ;  ">
+
+          </div>
+      </div>
+
+      <div class="col-sm-5">
+          <div class="card" style="width:400px" id = "info" >
+
+          </div>
+      </div>
+
+  </div>
+</div>
+
